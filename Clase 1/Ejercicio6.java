@@ -14,6 +14,7 @@ public class Ejercicio6 {
             float altura = sc.nextFloat();
             float ideal = (altura - 110);
             System.out.println("Tu peso ideal es " + ideal);
+            System.out.println("Tu peso actual es " + peso);
             
         }else {
             System.out.println("Digita el peso de la persona en kilos");
@@ -22,7 +23,8 @@ public class Ejercicio6 {
             float altura = sc.nextFloat();
             float ideal = (altura - 120);
             System.out.println("Tu peso ideal es " + ideal);
-        }
+            System.out.println("Tu peso actual es " + peso);
+        } sc.close();
         
      }
 }

@@ -35,7 +35,9 @@ public class Ejercicio5 {
         b = sc.nextInt(); } 
     else if (i >= 3) {
     System.out.print("Oh, oh... ÚLTIMO intento: ");
-    b = sc.nextInt(); }
-    }
+    b = sc.nextInt(); 
+    sc.close();
+     }
+    } 
   }
 }

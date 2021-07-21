@@ -19,6 +19,6 @@ public class Ejercicio2 {
             System.out.println("El alumno " + nombre + " aprobo con promedio de: " + promedio);
         } else {
             System.out.println("El alumno " + nombre + " reprobo con promedio de: " + promedio);
-        }
+        } sc.close();
           }
 }

@@ -15,7 +15,9 @@ public class Ejercicio10{
             System.out.print(fibo2 + " ");
             fibo2 = fibo1 + fibo2;
             fibo1 = fibo2 - fibo1;
-        }
-        System.out.println();
-    }
+            sc.close();
+        } 
+        
+        
+    } 
 }

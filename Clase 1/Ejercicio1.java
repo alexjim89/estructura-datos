@@ -40,6 +40,6 @@ public class Ejercicio1 {
             System.out.println("Hola " + nombre + " el resultado de su divicion es: " + resultado);
         } else {
             System.out.println("La opcion seleccionada no existe");
-        }
+        } in.close();
     }
 }

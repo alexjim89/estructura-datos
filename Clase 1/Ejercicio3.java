@@ -10,5 +10,6 @@ public class Ejercicio3 {
         int horas = sc.nextInt();
         int pago = (horas * 30000);
         System.out.println("El trabajador " + nombre + " recibe un salario de: " + pago);
-     }
+        sc.close();
+     } 
 }
