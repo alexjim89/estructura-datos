@@ -1,5 +1,6 @@
 public class App {
     public static void main(String[] args) {
-        System.out.println("Hello, World!");
+        char caracter = 'a';
+        System.out.println("hola \"mundo\" " + caracter + " \u00F6");
     }
 }
