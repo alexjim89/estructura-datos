@@ -6,6 +6,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Formulario2",
+            "request": "launch",
+            "mainClass": "src.Formulario2",
+            "projectName": "Proyecto1_f76a1eb9"
+        },
+        {
+            "type": "java",
+            "name": "Launch Formulario",
+            "request": "launch",
+            "mainClass": "src.Formulario",
+            "projectName": "Proyecto1_f76a1eb9"
+        },
+        {
+            "type": "java",
+            "name": "Launch App19",
+            "request": "launch",
+            "mainClass": "src.App19",
+            "projectName": "Proyecto1_f76a1eb9"
+        },
+        {
+            "type": "java",
+            "name": "Launch App1",
+            "request": "launch",
+            "mainClass": "src.App1",
+            "projectName": "Proyecto1_f76a1eb9"
+        },
+        {
+            "type": "java",
             "name": "Launch App1",
             "request": "launch",
             "mainClass": "App1",
