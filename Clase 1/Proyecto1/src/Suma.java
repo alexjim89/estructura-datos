@@ -11,6 +11,7 @@ public class Suma extends JFrame implements ActionListener{
 
  public Suma(){
   setLayout(null);
+
   label1 = new JLabel("Valor 1:");
   label1.setBounds(50,5,100,30);
   add(label1);
@@ -39,10 +40,10 @@ public class Suma extends JFrame implements ActionListener{
 
  public void actionPerformed(ActionEvent e){
   if(e.getSource() == boton1){
-    double valor1 = 0, valor2 = 0, resultado = 0;
+    double valor1 = 0.0, valor2 = 0.0, resultado = 0.0;
     
-    valor1 = Integer.parseInt(textfield1.getText());
-    valor2 = Integer.parseInt(textfield2.getText());
+    valor1 = Double.parseDouble(textfield1.getText());
+    valor2 = Double.parseDouble(textfield2.getText());
 
     resultado = valor1 + valor2;
 

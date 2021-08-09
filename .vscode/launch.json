@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Suma",
+            "request": "launch",
+            "mainClass": "Proyecto1.src.Suma",
+            "projectName": "estructura-datos_43f55590"
+        },
+        {
+            "type": "java",
             "name": "Launch Ejercicio10",
             "request": "launch",
             "mainClass": "Ejercicio10",
