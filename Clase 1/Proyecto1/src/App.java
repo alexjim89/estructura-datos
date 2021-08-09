@@ -1,4 +1,4 @@
-package src;
+package Proyecto1.src;
 public class App {
     public static void main(String[] args) {
         char caracter = 'a';

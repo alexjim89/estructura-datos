@@ -1,4 +1,4 @@
-package src;
+package Proyecto1.src;
 public class App16 {
     public static void main(String[] args){
         int nums[] = new int[5];

@@ -1,5 +1,7 @@
+package Proyecto1.src;
+
 import java.util.Scanner;
-public class Ejercicio10{
+public class Ejercicio9{
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         int numero,fibo1,fibo2,i;

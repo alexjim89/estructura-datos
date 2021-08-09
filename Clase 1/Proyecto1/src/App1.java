@@ -1,4 +1,4 @@
-package src;
+package Proyecto1.src;
 import javax.swing.*;
 
 public class App1 extends JFrame{

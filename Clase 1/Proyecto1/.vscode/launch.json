@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Suma",
+            "request": "launch",
+            "mainClass": "src.Suma",
+            "projectName": "Proyecto1_f76a1eb9"
+        },
+        {
+            "type": "java",
             "name": "Launch Formulario2",
             "request": "launch",
             "mainClass": "src.Formulario2",

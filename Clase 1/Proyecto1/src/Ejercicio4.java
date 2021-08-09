@@ -1,3 +1,5 @@
+package Proyecto1.src;
+
 import java.util.*;
 public class Ejercicio4 {
 

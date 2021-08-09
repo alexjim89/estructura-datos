@@ -1,3 +1,4 @@
+package Proyecto1.src;
 import java.util.Locale;
 import java.util.Scanner;
 public class Ejercicio1 {

@@ -1,4 +1,4 @@
-package src;
+package Proyecto1.src;
 import java.util.Scanner;
 public class App13 {
     public static void main(String[] args){

@@ -1,4 +1,4 @@
-package src;
+package Proyecto1.src;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;

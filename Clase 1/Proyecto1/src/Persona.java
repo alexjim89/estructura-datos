@@ -1,4 +1,4 @@
-package src;
+package Proyecto1.src;
 import java.io.Serializable;
 
 public class Persona implements Serializable {
