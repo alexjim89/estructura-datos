@@ -10,7 +10,7 @@ public class Principal extends JFrame implements ActionListener{
     private JLabel labelLogo,labelBienvenido,labelTitle,labelNombre,labelAPaterno,labelAMaterno,
                    labelDepartamento,labelAntiguedad,labelResultado,labelfooter;
     private JTextField txtNombreTrabajador,txtAPaternoTrabajador,txtAMaternoTrabajador;
-    private JComboBox comboDepartamento,comboAntiguedad;
+    private JComboBox<String> comboDepartamento,comboAntiguedad;
     private JScrollPane scrollpane1; 
     private JTextArea textarea1;
 
@@ -151,7 +151,7 @@ public class Principal extends JFrame implements ActionListener{
       labelDepartamento.setForeground(new Color(255, 255, 255));
       add(labelDepartamento);
 
-      comboDepartamento = new JComboBox();
+      comboDepartamento = new JComboBox<String>();
       comboDepartamento.setBounds(220,213,220,25);
       comboDepartamento.setBackground(new java.awt.Color(224, 224, 224));
       comboDepartamento.setFont(new java.awt.Font("Andale Mono", 1, 14));
@@ -168,7 +168,7 @@ public class Principal extends JFrame implements ActionListener{
       labelAntiguedad.setForeground(new Color(255, 255, 255));
       add(labelAntiguedad);
 
-      comboAntiguedad = new JComboBox();
+      comboAntiguedad = new JComboBox<String>();
       comboAntiguedad.setBounds(220,273,220,25);
       comboAntiguedad.setBackground(new java.awt.Color(224, 224, 224));
       comboAntiguedad.setFont(new java.awt.Font("Andale Mono", 1, 14));
