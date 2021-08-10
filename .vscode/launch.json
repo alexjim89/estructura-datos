@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Licencia",
+            "request": "launch",
+            "mainClass": "Licencia",
+            "projectName": "estructura-datos_43f55590"
+        },
+        {
+            "type": "java",
             "name": "Launch Bienvenida",
             "request": "launch",
             "mainClass": "Bienvenida",
