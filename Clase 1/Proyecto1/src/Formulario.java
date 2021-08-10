@@ -7,8 +7,8 @@ import java.awt.*;
 
 public class Formulario extends JFrame implements ActionListener, ItemListener, ChangeListener{
   
-  private JLabel label1, label2, label3, label4, label5, label6, label7, label8, label9, label10;
-  private JButton botonc, boton1, boton2, boton3, boton4, boton5, boton6, boton7;
+  private JLabel label1, label2, label3, label4, label5, label6, label7, label8, label9, label10, label11;
+  private JButton botonc, boton1, boton2, boton3, boton4, boton5, boton6, boton7, boton8;
   private JTextField textfield1, textfield2, textfield3;
   private JTextArea textarea1;
   private JScrollPane scrollpane1;
@@ -16,12 +16,13 @@ public class Formulario extends JFrame implements ActionListener, ItemListener, 
   private JMenu menu1, menu2, menu3;
   private JMenuItem menuitem1, menuitem2, menuitem3, menuitem4, menuitem5, menuitem6, menuitem7;
   private JComboBox<String> combo1, combo2, combo3, combo4;
-  private JCheckBox check1, check2, check3;
+  private JCheckBox check1, check2, check3, check4;
+  private JRadioButton radio1, radio2, radio3;
+  private ButtonGroup bg;
   String texto = "";
   String texto2 = "";
   String seleccion = "";
-  String cad="";
-
+  
   public Formulario(){
     
     setLayout(null);
@@ -105,6 +106,10 @@ public class Formulario extends JFrame implements ActionListener, ItemListener, 
     label10 = new JLabel("Resultado:");
     label10.setBounds(790,230,100,30);
     add(label10);
+
+    label11 = new JLabel("Aceptar terminos y condiciones");
+    label11.setBounds(10,10,400,30);
+    add(label11);
     
     textfield1 = new JTextField();
     textfield1.setBounds(670,45,300,30);
@@ -153,10 +158,36 @@ public class Formulario extends JFrame implements ActionListener, ItemListener, 
     add(boton7);
     boton7.addActionListener(this);
 
+    boton8 = new JButton("Continuar");
+    boton8.setBounds(10,480,100,30);
+    add(boton8);
+    boton8.addActionListener(this);
+    boton8.setEnabled(false);
+
     botonc = new JButton("Cerrar");
     botonc.setBounds(235,250,100,30);
     add(botonc);
     botonc.addActionListener(this);
+
+    bg = new ButtonGroup();
+
+    radio1 = new JRadioButton("640*480");
+    radio1.setBounds(200,300,100,30);
+    radio1.addChangeListener(this);
+    add(radio1);
+    bg.add(radio1);
+
+    radio2 = new JRadioButton("800*600");
+    radio2.setBounds(200,340,100,30);
+    radio2.addChangeListener(this);
+    add(radio2);
+    bg.add(radio2);
+
+    radio3 = new JRadioButton("1024*768");
+    radio3.setBounds(200,380,100,30);
+    radio3.addChangeListener(this);
+    add(radio3);
+    bg.add(radio3);
 
     textarea1 = new JTextArea();
     scrollpane1 = new JScrollPane(textarea1);
@@ -208,6 +239,11 @@ public class Formulario extends JFrame implements ActionListener, ItemListener, 
     check3.setBounds(10,430,150,30);
     check3.addChangeListener(this);
     add(check3);
+
+    check4 = new JCheckBox("Acepto");
+    check4.setBounds(10,520,100,30);
+    check4.addChangeListener(this);
+    add(check4);
   }
   public void actionPerformed(ActionEvent e){
   
@@ -225,7 +261,7 @@ public class Formulario extends JFrame implements ActionListener, ItemListener, 
     }
     if(e.getSource() == boton4){
       texto = textfield1.getText();
-      setTitle("Hola: " + texto + " tu eleccion es: " + seleccion);
+      setTitle(texto);
     }
     if(e.getSource() == boton5){
       texto2 += textfield1.getText() + "\n";
@@ -270,18 +306,23 @@ public class Formulario extends JFrame implements ActionListener, ItemListener, 
       resultado = valor1 + valor2;
       label10.setText("Resultado: " + resultado);
     }
+    if(e.getSource() == boton8){
+      System.exit(0);
+    }
   }
 
   public void itemStateChanged(ItemEvent s){
     
     if(s.getSource() == combo1){
       seleccion = combo1.getSelectedItem().toString();
-      setTitle("Hola: " + texto + " tu eleccion es: " + seleccion);
+      setTitle(seleccion);
     }
   } 
 
-  public void stateChanged(ChangeEvent e){
+  public void stateChanged(ChangeEvent t){
     
+    String cad="";
+
     if(check1.isSelected() == true){
       cad = cad + "Inglés-";
     }
@@ -291,7 +332,21 @@ public class Formulario extends JFrame implements ActionListener, ItemListener, 
     if(check3.isSelected() == true){
       cad = cad + "Alemán-";
     }
-    setTitle(cad);
+    setTitle("Hola " + texto + " tu eleccion es " + seleccion + " idioma/s " + cad);
+    if(check4.isSelected() == true){
+      boton8.setEnabled(true);
+   } else {
+      boton8.setEnabled(false);
+   }
+   if(radio1.isSelected()){
+    setSize(640,480);
+    }
+    if(radio2.isSelected()){
+        setSize(800,600);
+    }
+    if(radio3.isSelected()){
+        setSize(1024,768);
+    }
   }   
   public static void main(String args[]){
     
