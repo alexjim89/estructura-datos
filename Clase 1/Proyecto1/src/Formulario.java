@@ -1,10 +1,11 @@
 package Proyecto1.src;
 
 import javax.swing.*;
+import javax.swing.event.*;
 import java.awt.event.*;
 import java.awt.*;
 
-public class Formulario extends JFrame implements ActionListener, ItemListener{
+public class Formulario extends JFrame implements ActionListener, ItemListener, ChangeListener{
   
   private JLabel label1, label2, label3, label4, label5, label6, label7, label8, label9, label10;
   private JButton botonc, boton1, boton2, boton3, boton4, boton5, boton6, boton7;
@@ -12,12 +13,14 @@ public class Formulario extends JFrame implements ActionListener, ItemListener{
   private JTextArea textarea1;
   private JScrollPane scrollpane1;
   private JMenuBar menubar;
-  private JMenu menu1;
-  private JMenuItem menuitem1, menuitem2, menuitem3;
+  private JMenu menu1, menu2, menu3;
+  private JMenuItem menuitem1, menuitem2, menuitem3, menuitem4, menuitem5, menuitem6, menuitem7;
   private JComboBox<String> combo1, combo2, combo3, combo4;
+  private JCheckBox check1, check2, check3;
   String texto = "";
   String texto2 = "";
   String seleccion = "";
+  String cad="";
 
   public Formulario(){
     
@@ -29,17 +32,39 @@ public class Formulario extends JFrame implements ActionListener, ItemListener{
     menu1 = new JMenu("Opciones");
     menubar.add(menu1);
 
-    menuitem1 = new JMenuItem("Rojo");
+    menu2 = new JMenu("Tamaño de la ventana");
+    menu1.add(menu2);
+
+    menu3 = new JMenu("Color de fondo");
+    menu1.add(menu3);
+
+    menuitem1 = new JMenuItem("300*200");
+    menu2.add(menuitem1);
     menuitem1.addActionListener(this);
-    menu1.add(menuitem1);
-
-    menuitem2 = new JMenuItem("Verde");
+  
+    menuitem2 = new JMenuItem("640*480");
+    menu2.add(menuitem2);
     menuitem2.addActionListener(this);
-    menu1.add(menuitem2);
 
-    menuitem3 = new JMenuItem("Azul");
+    menuitem3 = new JMenuItem("800*600");
+    menu2.add(menuitem3);
     menuitem3.addActionListener(this);
-    menu1.add(menuitem3);
+
+    menuitem4 = new JMenuItem("1024*768");
+    menu2.add(menuitem4);
+    menuitem4.addActionListener(this);
+
+    menuitem5 = new JMenuItem("Rojo");
+    menu3.add(menuitem5);
+    menuitem5.addActionListener(this);
+
+    menuitem6 = new JMenuItem("Verde");
+    menu3.add(menuitem6);
+    menuitem6.addActionListener(this);
+
+    menuitem7 = new JMenuItem("Azul");
+    menu3.add(menuitem7);
+    menuitem7.addActionListener(this);
 
     label1 = new JLabel("Interfaz gráfica.");
     label1.setBounds(800,0,300,30);
@@ -141,7 +166,6 @@ public class Formulario extends JFrame implements ActionListener, ItemListener{
     combo1 = new JComboBox<String>();
     combo1.setBounds(10,300,80,20);
     add(combo1);
-
     combo1.addItem("rojo");
     combo1.addItem("verde");
     combo1.addItem("azul");
@@ -169,11 +193,24 @@ public class Formulario extends JFrame implements ActionListener, ItemListener{
       combo4.addItem(String.valueOf(i));
     }
     add(combo4);
+
+    check1 = new JCheckBox("Inglés");
+    check1.setBounds(10,350,150,30);
+    check1.addChangeListener(this);
+    add(check1);
+
+    check2 = new JCheckBox("Francés");
+    check2.setBounds(10,390,150,30);
+    check2.addChangeListener(this);
+    add(check2);
+
+    check3 = new JCheckBox("Alemán");
+    check3.setBounds(10,430,150,30);
+    check3.addChangeListener(this);
+    add(check3);
   }
   public void actionPerformed(ActionEvent e){
   
-    Container fondo = this.getContentPane();
-
     if(e.getSource() == botonc){
      System.exit(0);
     }
@@ -196,42 +233,66 @@ public class Formulario extends JFrame implements ActionListener, ItemListener{
       textfield1.setText("");
     }
     if(e.getSource() == menuitem1){
-      fondo.setBackground(new Color(255,0,0));
+      setSize(300,200);
     }
     if(e.getSource() == menuitem2){
-      fondo.setBackground(new Color(0,255,0));
+      setSize(640,480);
     }
     if(e.getSource() == menuitem3){
-      fondo.setBackground(new Color(0,0,255));
+      setSize(800,600);
+    }
+    if(e.getSource() == menuitem4){
+      setSize(1024,768);
+    }
+    if(e.getSource() == menuitem5){
+      getContentPane().setBackground(new Color(255,0,0));
+    }
+    if(e.getSource() == menuitem6){
+      getContentPane().setBackground(new Color(0,255,0));
+    }
+    if(e.getSource() == menuitem7){
+      getContentPane().setBackground(new Color(0,0,255));
     }
     if(e.getSource() == boton6){
       String cad1 = combo2.getSelectedItem().toString();
       String cad2 = combo3.getSelectedItem().toString();
       String cad3 = combo4.getSelectedItem().toString();
-  
       int rojo = Integer.parseInt(cad1);
       int verde = Integer.parseInt(cad2);
       int azul = Integer.parseInt(cad3);
-  
       Color color1 = new Color(rojo,verde,azul);
       boton6.setBackground(color1);
     }
     if(e.getSource() == boton7){
-      
       double valor1 = 0.0, valor2 = 0.0, resultado = 0.0;
       valor1 = Double.parseDouble(textfield2.getText());
       valor2 = Double.parseDouble(textfield3.getText());
       resultado = valor1 + valor2;
       label10.setText("Resultado: " + resultado);
     }
-  }  
+  }
+
   public void itemStateChanged(ItemEvent s){
     
     if(s.getSource() == combo1){
       seleccion = combo1.getSelectedItem().toString();
       setTitle("Hola: " + texto + " tu eleccion es: " + seleccion);
     }
-  }    
+  } 
+
+  public void stateChanged(ChangeEvent e){
+    
+    if(check1.isSelected() == true){
+      cad = cad + "Inglés-";
+    }
+    if(check2.isSelected() == true){
+      cad = cad + "Francés-";
+    }
+    if(check3.isSelected() == true){
+      cad = cad + "Alemán-";
+    }
+    setTitle(cad);
+  }   
   public static void main(String args[]){
     
     Formulario formulario1 = new Formulario();
