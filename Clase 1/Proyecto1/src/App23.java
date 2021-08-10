@@ -2,7 +2,7 @@ package Proyecto1.src;
 
 import java.util.Locale;
 import java.util.Scanner;
-public class Ejercicio7{
+public class App23{
     public static void main(String argm[]){
         Scanner sc = new Scanner(System.in).useLocale(Locale.US);
         int seguir = 1;

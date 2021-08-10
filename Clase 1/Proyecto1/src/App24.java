@@ -1,7 +1,7 @@
 package Proyecto1.src;
 
 import java.util.Scanner;
-public class Ejercicio8 {
+public class App24 {
    public static void main(String args[]){
       Scanner sc = new Scanner(System.in);
       int compu = (int)(Math.random() * 3) + 1;

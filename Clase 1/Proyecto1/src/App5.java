@@ -1,20 +1,25 @@
 package Proyecto1.src;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.ObjectOutputStream;
-
+import java.util.Locale;
+import java.util.Scanner;
 public class App5 {
-
-    public static void main(String args []){
-        var archivo = "ejercicio.dat";
-        try (var p1 = new ObjectOutputStream(
-        new FileOutputStream(archivo))) {
-            p1.writeObject(new Persona("deivy","31","hombre"));
-            p1.writeObject(new Persona("jose","39", "hombra"));
-        } catch (FileNotFoundException e) {
-        System.out.println("¡El fichero no existe!");
-        } catch (Exception e) {
-        System.out.println(e.getMessage());
-        }
-    }
+     
+         public static void main(String arg[]){
+        Scanner sc = new Scanner (System.in).useLocale(Locale.US);
+        String nombre = "";
+        System.out.println("Digita nombre del alumno");
+        nombre = sc.nextLine();
+        System.out.println("Digita resultado de matematicas");
+        float matematicas = sc.nextFloat();
+        System.out.println("Digita resultado de ingles");
+        float ingles = sc.nextFloat();
+        System.out.println("Digita resultado de sociales");
+        Float sociales = sc.nextFloat();
+        float promedio = (matematicas + ingles + sociales) / 3;
+        
+        if (promedio >= 3.0){
+            System.out.println("El alumno " + nombre + " aprobo con promedio de: " + promedio);
+        } else {
+            System.out.println("El alumno " + nombre + " reprobo con promedio de: " + promedio);
+        } sc.close();
+          }
 }

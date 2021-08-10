@@ -1,7 +1,7 @@
 package Proyecto1.src;
 
 import java.util.Scanner;
-public class Ejercicio5 {
+public class App21 {
     public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
     int a = (int) ((Math.random() * 100)+1);

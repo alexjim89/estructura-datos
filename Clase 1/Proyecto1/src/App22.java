@@ -2,7 +2,7 @@ package Proyecto1.src;
 
 import java.util.Locale;
 import java.util.Scanner;
-public class Ejercicio6 {
+public class App22 {
          public static void main(String arg[]) {
         Scanner sc = new Scanner (System.in).useLocale(Locale.US);
         String genero = "h";

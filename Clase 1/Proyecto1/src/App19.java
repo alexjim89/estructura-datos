@@ -1,6 +1,6 @@
 package Proyecto1.src;
 import java.util.Scanner;
-public class Ejercicio3 {
+public class App19 {
      
          public static void main(String arg[]) {
         Scanner sc = new Scanner (System.in);
