@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Bienvenida",
+            "request": "launch",
+            "mainClass": "Bienvenida",
+            "projectName": "estructura-datos_43f55590"
+        },
+        {
+            "type": "java",
             "name": "Launch App1",
             "request": "launch",
             "mainClass": "Proyecto1.src.App1",
